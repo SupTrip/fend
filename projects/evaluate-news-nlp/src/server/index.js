@@ -26,7 +26,7 @@ console.log(__dirname)
 
 app.get('/', function (req, res) {
      res.sendFile('dist/index.html')
-   // res.sendFile(path.resolve('src/client/views/index.html'))
+   //res.sendFile(path.resolve('dist/index.html'))
 })
 
 // designates what port the app will listen to for incoming requests
@@ -35,12 +35,12 @@ app.listen(8081, function () {
 })
 
 app.post('/api', async (req, res) => {
-    const { formText } = req.body;
+    const  formText  = req.body.url;
     console.log(formText);
     
     try {
         console.log("Sending request");
-        textapi.sentiment({'text': formText }, 
+        textapi.sentiment({'url': formText }, 
           function(error, response) {
           if (error === null) {
             console.log(response);
