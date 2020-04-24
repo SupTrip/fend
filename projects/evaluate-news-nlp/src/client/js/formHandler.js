@@ -12,8 +12,8 @@ function handleSubmit(event) {
     {
         method: 'POST',
         mode:'cors',
-        body: JSON.stringify({formText}),
-        headers: {"Content-Type": "application/json"}
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({url:formText}),
     })
     .then(res => res.json())
     .then(function(res) {

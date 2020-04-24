@@ -15,7 +15,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 
-
+let envn = process.env.NODE_ENV;
 const app = express()
 
 app.use(express.static('dist'))
